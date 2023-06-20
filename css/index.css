@@ -1,0 +1,456 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,body{
+  overflow-x: hidden;
+}
+
+.side-nav{
+    width: 225px;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    color: white;
+    z-index: 1000;
+    animation: fadeOutLeft;
+    animation-duration: 0.8s;
+
+}
+
+.side-nav .top-nav-box .img-box{
+    width: 140px;
+    height: 140px;
+    background-color: rgb(110, 110, 0.588);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-nav .top-nav-box .img-box .img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-image: url(..//images/pic.jpeg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.side-nav .nav-icon-box a{
+  transition: all 1000ms ease;
+  
+}
+
+.side-nav .nav-icon-box a i{
+    padding: 10px;
+    background-color: rgb(110, 110, 0.588);
+    font-size: 17px;
+    border-radius: 50%;
+    margin: 10px 2px;
+    color: white;
+    position: relative;
+  }
+  .side-nav .nav-icon-box a:hover i::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-6px, -5px);
+    height: 47px;
+    width: 48px;
+    border-radius: 50%;
+    background-color: rgb(135 135 10 / 40%);
+    font-size: 17px;
+    z-index: -1;
+}
+
+.side-nav .center-nav-box .list-group li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+}
+
+.side-nav .center-nav-box .list-group li i{
+    color: #fff;
+    font-size: 15px;
+}
+
+.side-nav .center-nav-box .list-group li:hover a,
+.side-nav .center-nav-box .list-group li:hover i{
+    color: #149DDD;
+}
+
+.side-nav .center-nav-box .list-group .active a,
+.side-nav .center-nav-box .list-group .active i{
+    color: #149DDD;
+ }
+
+
+ .side-nav.active{
+    opacity: 1;
+    animation:fadeInLeft;
+    animation-duration: 0.8s;
+ }
+
+ /* <!----------hero section--> */
+
+ .hero-bg{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/banner.jpg);
+    background-size: 96%;
+    background-position: 110%;
+    background-repeat: no-repeat;
+    position: relative;
+ }
+
+ .hero-bg-shadow-box{
+    width: 100%;
+    height: 100vh;
+    background: rgb(0, 0, 0,.0588);
+    position: absolute;
+    left: -9%;
+    top: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.hero-bg .hero-bg-shadow-box h1{
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+.hero-bg .hero-bg-shadow-box h4{
+    color: #fff;
+}
+.hero-bg .hero-bg-shadow-box h4 span{
+     /* color:rgb(255, 0, 0);     */
+     color: rgb(56 169 236);
+}
+.hero-bg button{
+    color: #fff;
+    z-index: 100;
+    font-size: 30px;
+    opacity: 0;
+  
+}
+
+ /* <!---------- end here of hero section--> */
+
+  /* <!---------- responsive for home --> */
+  @media(max-width:991px) {
+    .side-nav{
+        opacity: 0;
+        position: fixed;
+        right: 32%;
+        animation:fadeOutLeft;
+        animation-duration: 0.8s;
+    }
+    .hero-bg button{
+        opacity: 1;
+    }
+
+    .side-nav.active{
+      opacity: 1;
+      animation:fadeInLeft;
+      animation-duration: 0.8s;
+      left: 0;
+   }
+
+    
+  }
+
+            /* about section */
+
+#sd-box{
+  margin: 50px;
+  /* border: 2px solid red; */
+  position: relative;
+  left: 5%;
+  font-size: 18px;
+}
+#sd-box h3{
+  font-size: 30px;
+}
+  .about-section h2::after,.resume-section h2::after{
+    color:#122D52;
+   
+ }
+.about-section #my-pic{
+  max-width: 20%;
+  /* border: 2px solid red; */
+}
+
+  .about-section i{
+    color:greenyellow;
+  }
+
+  .about-section h2::after,.portfolio-section h2::after,
+  .resume-section h2::after ,.skill-section h2::after,.contact-section h2::after{
+    content: '';
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: greenyellow;
+    bottom:0;
+    left: 0;
+}
+
+
+  /* skills section */
+
+  .skill-section span{
+    font-weight: bold;
+  }
+
+  .skill-section .progress{
+    border-radius: 0px !important;
+    height: 8px;
+  }
+
+  .skill-section .progress-bar{
+    background-color: #149DDD;
+  }
+
+   /* resume section */
+
+   .resume-section .resume-box{
+       border-left: 2px solid #149DDD;
+       position: relative;
+   }
+
+   .resume-section .resume-box::before{
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    border: 2px solid #149DDD;
+    background-color: #fff;
+    top: 0%;
+    left: -10px;
+  
+   }
+   .resume-section .resume-box h2{
+     font-weight: bold;
+   }
+   .resume-section .resume-box p{
+    font-style: italic;
+    font-size: 18px;
+  }
+
+
+
+    /* portfolio section */
+
+    .portfolio-section{
+        background-color: rgb(173, 177, 184,.204);
+    }
+
+    .portfolio-section ul .nav-box{
+             display: flex;
+             background-color: #fff;
+             border-radius: 25px;
+             padding: 10px;
+    }
+
+    .portfolio-section ul .nav-box li{
+          font-weight: bold;
+          color: #122D52;
+          margin: 0px 20px ;
+          cursor: pointer;
+    }
+
+    .portfolio-section ul .nav-box li:hover{
+        color: #149DDD
+  }
+
+  .portfolio-section ul .nav-box li.active{
+    color: #149DDD
+}
+
+  .portfolio-section .portfolio-box{
+         position: relative;
+  }
+  .portfolio-section .portfolio-box .portfolio-con-box{
+    width: 93.5%;
+    height: 0px;
+    background-color: rgb(20, 157, 221,0.545);
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    bottom:0;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+  }
+
+
+  .portfolio-section .portfolio-box .portfolio-con-box button{
+       width: 100%;
+       transition: 0.1s ease-in-out;
+  }
+
+  .portfolio-section .portfolio-box .portfolio-con-box button:hover{
+         background-color: #149ddd;
+}
+
+.portfolio-section .portfolio-box .portfolio-con-box button a{
+  padding: 10px 45%;
+  /* border: 2px solid red; */
+}
+
+.portfolio-section .portfolio-box .portfolio-con-box button i{
+    color: #fff;
+    font-size: 22px;
+
+}
+  .portfolio-section .portfolio-box:hover .portfolio-con-box{
+    opacity: 1;
+    height: 50px;
+  }
+
+ /* contact-section start here */
+ .contact-section .icon-box i{
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(20, 157,221, 0.243);
+    justify-content: center;
+    transition: 0.4s ease-in-out;
+    border-radius: 50%;
+
+ }
+
+ .contact-section .icon-box i:hover{
+    background-color: #149DDD;
+    color: #fff;
+
+ }
+ .contact-section label{
+    font-size: 17px;
+    font-family: sans-serif;
+ }
+
+ /* .contact-form{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  
+ } */
+
+
+
+  /* footer-section start here */
+
+.footer-section{
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-section h1{
+  font-family: 'Ubuntu','sans-serif';
+  color: #45505b;
+}
+
+.footer-section p{
+   font-style: italic;
+}
+
+
+.footer-section i{
+   padding: 10px;
+   background-color: rgb(20, 157,221, 0.243);
+   border-radius: 50%;
+   margin:0px 2px;
+   transition: 0.4s ease-in-out;
+}
+.footer-section i:hover{
+  background-color: #149DDD;
+  color: #fff;
+
+}
+
+
+
+
+
+ @media screen and (min-width: 300px) {
+
+  .hero-bg{
+    background-size: cover;
+    background-position: 50%;
+ }
+
+  .hero-bg-shadow-box{
+    width: 70%;
+    position: absolute;
+    left: 7%;
+    top: 13%;
+  }
+}
+ @media screen and (min-width: 350px) {
+
+  .hero-bg{
+    background-size: cover;
+    background-position: 50%;
+ }
+
+  .hero-bg-shadow-box{
+    width: 70%;
+    position: absolute;
+    left: 7%;
+    top: 13%;
+  }
+}
+ @media screen and (min-width: 500px) {
+
+  .hero-bg{
+    background-size: cover;
+    background-position: 90%;
+ }
+
+  .hero-bg-shadow-box{
+    width: 60%;
+    position: absolute;
+    left: 7%;
+    top: 13%;
+  }
+}
+ @media screen and (min-width: 700px) and (max-width: 950px) {
+
+  .hero-bg{
+    background-size: cover;
+    background-position: 90% 0%;
+ }
+
+  .hero-bg-shadow-box{
+    width: 70%;
+    position: absolute;
+    left: -5%;
+    top: 25%;
+  }
+}
+ @media screen and (min-width: 950px) and (max-width: 1250px) {
+
+  .hero-bg{
+    background-size: cover;
+    background-position: 90% 0%;
+ }
+
+  .hero-bg-shadow-box{
+    width: 40%;
+    position: absolute;
+    left: 22%;
+    top: 25%;
+  }
+}
